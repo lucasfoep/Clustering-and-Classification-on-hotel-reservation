@@ -1,7 +1,26 @@
-# Importing libraries
+# Summary:
+  
+# Data was overall pretty clean. A few variables had outliers, which were easily
+# removed, and two variables were incongruent (no_of_previous_cancellations and
+# no_of_previous_bookings_not_cancelled) thus removed. One variable, lead_time,
+# was right skewed and required a log transformation. There was no multicollinearity
+# in the dataset. Pre-processing required sampling(due to the size of the dataset),
+# some feature engineering, creating dummy variables and standardization. All these
+# steps allowed for clusterization and classification.
 
+# K-Means performed surprisingly well considering how intertwined both classes are.
+# All three classifiers (KNN, SVM and Decision trees) had virtually the same accuracy,
+# at about .79 but precision and recall for decision trees, the model chosen, were
+# low due to class imbalance, as denoted by a low kappa.
+
+# Sampling didn't affect results as accuracy, precision and recall were all
+# virtually the same when running decision trees on the full dataset.
+
+
+# Setting seed to get consistent results on stochastic models
 set.seed(1)
 
+# Importing libraries
 library(caret)
 library(pROC)
 library(stats)
@@ -670,23 +689,3 @@ roc_obj <- roc((test.bin.target), pred_prob[, 1])
 
 # Printing Receiver Operator Characteristics curve
 plot(roc_obj, print.auc=TRUE)
-
-```
-
-# Summary:
-  
-# Data was overall pretty clean. A few variables had outliers, which were easily
-# removed, and two variables were incongruent (no_of_previous_cancellations and
-# no_of_previous_bookings_not_cancelled) thus removed. One variable, lead_time,
-# was right skewed and required a log transformation. There was no multicollinearity
-# in the dataset. Pre-processing required sampling(due to the size of the dataset),
-# some feature engineering, creating dummy variables and standardization. All these
-# steps allowed for clusterization and classification.
-
-# K-Means performed surprisingly well considering how intertwined both classes are.
-# All three classifiers (KNN, SVM and Decision trees) had virtually the same accuracy,
-# at about .79 but precision and recall for decision trees, the model chosen, were
-# low due to class imbalance, as denoted by a low kappa.
-
-# Sampling didn't affect results as accuracy, precision and recall were all
-# virtually the same when running decision trees on the full dataset.
