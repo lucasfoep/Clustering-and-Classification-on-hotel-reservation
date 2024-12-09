@@ -1,3 +1,3 @@
 # Clustering-and-Classification-on-hotel-reservation
 
-This project was part of a class in machine learning from DePaul University's master's in Data Science.
+This project was part of the first class I took in Machine Learning at the masters program in Data Science at DePaul! We learned some classification and clustering algorithms, such as Decision Trees, Support Vector Machines, K Nearest Neighbors, K means and Hierarchical Agglomerative Clustering, and I decided to put some of them to practice on this project! I used the R language to perform all the steps from the data mining pipeline: Data selection, preprocessing, transformation, classification and evaluation. Many libraries were used, such as ggplot2, tidyverse and caret, allowing me to explore cluster analysis through k-means and classification through SVM, KNN and Decision Trees.
